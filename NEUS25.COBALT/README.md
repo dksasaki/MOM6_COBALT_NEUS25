@@ -14,7 +14,7 @@ cd CEFI-regional-MOM6
 
 ### Checkout the specific commit
 ```bash
-git checkout 75c45e8a1965fe03332e574d106c35dda5887e64
+git checkout 214d998fba1776261df4af250d17663c272aa218
 
 ```
 

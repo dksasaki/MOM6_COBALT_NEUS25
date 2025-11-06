@@ -1,0 +1,3 @@
+[submodule "tools/mom6_neus25_utils"]
+	path = tools/mom6_neus25_utils
+	url = git@github.com:dksasaki/mom6_neus25_utils.git

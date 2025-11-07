@@ -112,39 +112,6 @@ Forcing: ERA5, GLORYS, GloFAS, nudging files → Generate with tools
 ### Step 5: Edit Configuration
 
 
-<!-- Directory structure after setup:
-```
-NEUS25.COBALT/
-├── README.md
-├── configs
-│   ├── MOM_input                 # MOM6 configuration file
-│   ├── MOM_layout                # MOM6 parallelization file
-│   ├── MOM_override              # overrides MOM6 configuration*
-│   ├── MOM_override.template     # overrides MOM6 configuration file (template)
-│   ├── COBALT_input              # COBALT configuration file
-│   ├── COBALT_override           # overrides COBALT configuration file
-│   ├── SIS_input                 # SIS configuration file
-│   ├── SIS_layout                # SIS parallelization file
-│   └── SIS_override              # overrides SIS configuration file
-├── input.nml                     # main configuration File
-├── data_table.template           # determines forcing and associated model components (template)
-├── data_table                    # determines forcing and associated model components*
-├── diag_table                    # output configuration
-├── field_table                   # configure boundary files and COBALT constants
-├── MOM_parameter_doc.all         # MOM6 configuration (produced after MOM6 is initialized)
-├── MOM_parameter_doc.debugging   # MOM6 configuration (produced after MOM6 is initialized)
-├── MOM_parameter_doc.layout      # MOM6 configuration (produced after MOM6 is initialized)
-├── MOM_parameter_doc.short       # MOM6 configuration (produced after MOM6 is initialized)
-├── mom.sub.x                     # slurm script for Northeastern's HPC (Explorer)
-├── INPUT\                        # input file directory
-├── outputs_raw\                  # output file directory
-└── restarts_raw\                 # restart file directory
-
-*will not be present after the setting up the directory structure
-```
-
-Configure the model for your simulation by editing these files: -->
-
 
 #### Essential Files (must edit) :
 

@@ -18,7 +18,7 @@ The general workflow is presented below.
 ### Setup and execution
 ```mermaid
 flowchart LR
-    A[1. git clone CEFI Repository] --> B[2. build MOM6/dependencies]
+    A[1. git clone CEFI repository] --> B[2. build MOM6/dependencies]
     B -.-> |compile| C{MOM6 executable}
     
     D[3. git clone MOM6_COBALT_NEUS25 Repository]
@@ -61,7 +61,7 @@ Each step is documented below.
 
 ## Setup Process
 
-### Step 1: Clone Repository
+### Step 1: git clone CEFI repository
 
 Get the MOM6 source code with the NEUS25 configuration:
 

@@ -159,7 +159,6 @@ In `NEUS25.COBALT` dir.:
 - `diag_table` - Configure output variables
 
 
-
 [Configuration Guide](docs/configuration.md) - All configuration options explained
 
 ### Step 6: Execute Model
@@ -169,12 +168,12 @@ Run the model using one of these approaches:
 **Test run** (interactive):
 ```bash
 mpiexec -np 120 ./MOM6
-```
+<!-- ```
 
 **Production run** (HPC/SLURM):
 ```bash
 sbatch --ntasks=120 mom.sub.x
-```
+``` -->
 
 The model will produce:
 - NetCDF diagnostic files (as specified in `diag_table`)

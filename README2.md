@@ -39,7 +39,7 @@ Continuing from INPUT
 ```mermaid
 flowchart LR
     D0[work dir.] --> A
-    A[5. Edit Configuration files] --> D
+    A[5. Edit namelists/data tables] --> D
     
     B[INPUT/]
     

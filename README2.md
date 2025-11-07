@@ -20,14 +20,17 @@ The general workflow is presented below.
 flowchart LR
     A[1. Clone Repository] --> B[2. Build Executable]
     B --> C{MOM6 executable}
-    C --> D[3. Create Work Directory]
     
-    D --> E[4. Gather Input Data <br/> <br/>Static Files<br/>- Grid<br/>- Initial Conditions<br/>- Auxiliary Files <br/> <br/>Forcing Files<br/>- Atmosphere<br/>- Ocean BC<br/>- Rivers]
-
-    E --> H[INPUT/]
+    D[3. Create Work Directory]
+    C -.-> |link/copy to| E[Work Directory]
+    D --> E
+    
+    E --> F[4. Gather Input Data <br/> <br/>Static Files<br/>- Grid<br/>- Initial Conditions<br/>- Auxiliary Files <br/> <br/>Forcing Files<br/>- Atmosphere<br/>- Ocean BC<br/>- Rivers]
+    F --> H[INPUT/]
     
     style C fill:#f9f,stroke:#333,stroke-width:4px
     style H fill:#afd,stroke:#333,stroke-width:2px
+    style E fill:#ffd,stroke:#333,stroke-width:2px
 ```
 
 ```mermaid

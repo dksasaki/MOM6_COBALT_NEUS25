@@ -120,17 +120,10 @@ Configure the model for your simulation by editing these files:
 
 #### Essential Files (must edit):
 
-1. **`input.nml`** - Set simulation timing:
-```fortran
-&coupler_nml
-  current_date = 1993,1,1,0,0,0  ! Start date
-  months = 3                      ! Run duration per job
-/
-```
+- **`input.nml`** - Set simulation timing:
 - **`configs/MOM_input`** - Tune physics parameters
 - **`configs/MOM_override`** - Override specific settings
 - **`configs/MOM_layout`** - Match processor count:
-
 - **`data_table`** - Update paths to your INPUT files
 - **`diag_table`** - Modify output variables and frequencies
 - **`field_table`** - Adjust tracer initialization

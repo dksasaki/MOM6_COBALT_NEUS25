@@ -126,8 +126,9 @@ Obtain all required input files and place them in the `INPUT/` directory:
 
 1. **Static files** (one-time download)
    - Grid files (ocean_hgrid.nc, ocean_static.nc)
-   - Initial conditions (T, S, biogeochemistry)
+   - Initial conditions (MOM6, COBALT)
    - Auxiliary files (masks, tidal harmonics)
+   - bgc lateral boundary files
    - Download from Zenodo: [DOI]
 
 2. **Forcing files** (time-varying, per simulation period)

@@ -10,8 +10,7 @@ git checkout 214d998fba1776261df4af250d17663c272aa218
 git submodule update --recursive
 ```
 
-### compilation
-The compilation is system dependent, so I'll not get in details here.
+After updating the repository, we need to compile the model. Since compilation is system dependent, so this task is left to the reader.
 
 ---
 

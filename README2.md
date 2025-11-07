@@ -127,19 +127,19 @@ Configure the model for your simulation by editing these files:
   months = 3                      ! Run duration per job
 /
 ```
+- **`configs/MOM_input`** - Tune physics parameters
+- **`configs/MOM_override`** - Override specific settings
+- **`configs/MOM_layout`** - Match processor count:
 
-2. **`data_table`** - Update paths to your INPUT files
+- **`data_table`** - Update paths to your INPUT files
+- **`diag_table`** - Modify output variables and frequencies
+- **`field_table`** - Adjust tracer initialization
 
-3. **`configs/MOM_layout`** - Match processor count:
+
 ```bash
 cp configs/MOM_layout.120 configs/MOM_layout  # For 120 cores
 ```
 
-#### Optional Files (edit as needed):
-- **`diag_table`** - Modify output variables and frequencies
-- **`field_table`** - Adjust tracer initialization
-- **`configs/MOM_input`** - Tune physics parameters
-- **`configs/MOM_override`** - Override specific settings
 
 📖 **[Configuration Guide](docs/configuration.md)** - All configuration options explained
 

@@ -35,6 +35,7 @@ flowchart LR
     style E fill:#ffd,stroke:#333,stroke-width:2px
 ```
 
+Continuing from INPUT
 ```mermaid
 flowchart LR
     A[5. Edit Configuration <br/> <br/> Essential Files<br/>- input.nml<br/>- MOM_layout<br/>- MOM_input<br/>- MOM_override<br/>- diag_table<br/>- field_table<br/>- data_table] --> D

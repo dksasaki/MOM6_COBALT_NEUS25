@@ -143,10 +143,10 @@ NEUS25.COBALT/
 ├── data_table                    # determines forcing and associated model components*
 ├── diag_table                    # output configuration
 ├── field_table                   # configure boundary files and COBALT constants
-├── MOM_parameter_doc.all         # MOM6 configuration (produced after MOM6 starts to run)
-├── MOM_parameter_doc.debugging   # MOM6 configuration (produced after MOM6 starts to run)
-├── MOM_parameter_doc.layout      # MOM6 configuration (produced after MOM6 starts to run)
-├── MOM_parameter_doc.short       # MOM6 configuration (produced after MOM6 starts to run)
+├── MOM_parameter_doc.all         # MOM6 configuration (produced after MOM6 is initialized)
+├── MOM_parameter_doc.debugging   # MOM6 configuration (produced after MOM6 is initialized)
+├── MOM_parameter_doc.layout      # MOM6 configuration (produced after MOM6 is initialized)
+├── MOM_parameter_doc.short       # MOM6 configuration (produced after MOM6 is initialized)
 ├── mom.sub.x                     # slurm script for Northeastern's HPC (Explorer)
 ├── INPUT\                        # input file directory
 ├── outputs_raw\                  # output file directory

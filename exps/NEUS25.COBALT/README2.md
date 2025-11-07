@@ -1,0 +1,247 @@
+# NEUS25-MOM6-COBALT Setup Guide
+
+## Overview
+
+This guide walks through setting up and running the MOM6-COBALT regional ocean-biogeochemistry model for the Northeast US continental shelf.
+
+## Workflow Overview
+
+```mermaid
+flowchart LR
+    A[1. Get Code] --> B[2. Compile]
+    B --> C{MOM6 executable}
+    C --> D[3. Setup Directory]
+    
+    D --> E[4. Get Input Files]
+    E --> F[Static Files<br/>- Grid<br/>- Initial Conditions]
+    E --> G[Forcing Files<br/>- Atmosphere<br/>- Ocean BC<br/>- Rivers]
+    
+    F --> H[5. Configure]
+    G --> H
+    
+    H --> I[Edit Config Files<br/>- input.nml<br/>- data_table<br/>- MOM_layout]
+    
+    I --> J[6. Run Model]
+    J --> K[Output<br/>- NetCDF files<br/>- Restart files<br/>- Logs]
+    
+    K --> L{Continue?}
+    L -->|Yes| M[Update Config]
+    M --> J
+    L -->|No| N[Analysis]
+    
+    style C fill:#f9f,stroke:#333,stroke-width:4px
+    style K fill:#9f9,stroke:#333,stroke-width:2px
+```
+
+## Prerequisites
+
+- Linux/Unix environment with MPI
+- Fortran compiler (Intel or GNU)
+- NetCDF libraries
+- ~2TB storage for inputs, ~5TB for outputs
+
+## Setup Process
+
+### Step 1: Get the Code
+
+```bash
+git clone --recursive https://github.com/NOAA-GFDL/CEFI-regional-MOM6
+cd CEFI-regional-MOM6
+git checkout 214d998fba1776261df4af250d17663c272aa218
+git submodule update --recursive
+```
+
+### Step 2: Compile MOM6
+
+Build the executable for your system. This step is system-specific and produces the `MOM6` executable.
+
+```mermaid
+flowchart LR
+    A[Source Code] --> B[Compiler<br/>+ Libraries]
+    B --> C[MOM6 executable]
+    
+    D[Required:<br/>- Fortran compiler<br/>- MPI<br/>- NetCDF<br/>- HDF5] --> B
+    
+    style C fill:#f9f,stroke:#333,stroke-width:4px
+```
+
+📖 **[Compilation Guide](docs/compilation.md)** - Detailed build instructions  
+🔗 **[GFDL Instructions](https://github.com/NOAA-GFDL/MOM6/wiki/Getting-Started)** - Official MOM6 build docs
+
+### Step 3: Prepare Your Working Directory
+
+```bash
+# Copy the NEUS25 configuration
+cp -r exps/NEUS25.COBALT /your/work/dir/
+
+# Navigate to your working directory
+cd /your/work/dir/NEUS25.COBALT/
+
+# Link the compiled executable
+ln -s /path/to/compiled/MOM6 .
+```
+
+Directory structure after setup:
+```
+NEUS25.COBALT/
+├── MOM6 → (executable)
+├── INPUT/              # Will contain forcing files
+├── configs/            # Configuration files
+├── input.nml          # Main control file
+├── data_table         # Forcing file paths
+├── diag_table         # Output configuration
+└── field_table        # Tracer setup
+```
+
+### Step 4: Obtain Input Files
+
+```mermaid
+flowchart TD
+    A[Input Files] --> B[Static Files<br/>One-time download]
+    A --> C[Time-Varying Forcing<br/>Per simulation period]
+    
+    B --> D[Grid files<br/>ocean_hgrid.nc<br/>ocean_static.nc]
+    B --> E[Initial Conditions<br/>WOA23 + ESM4]
+    
+    C --> F[Atmospheric<br/>ERA5 - 9 variables]
+    C --> G[Ocean BC<br/>GLORYS - 5 variables]
+    C --> H[Rivers<br/>GloFAS + nutrients]
+    
+    D --> I[INPUT/]
+    E --> I
+    F --> I
+    G --> I
+    H --> I
+    
+    style I fill:#9f9,stroke:#333,stroke-width:2px
+```
+
+1. **Static files** (grid, initial conditions)
+   - Download from Zenodo: [DOI]
+   - Place in `INPUT/` directory
+
+2. **Time-varying forcing** (atmosphere, ocean, rivers)
+   - Generate using preprocessing tools
+   - Or download pre-processed files from [location]
+
+📖 **[Input Files Guide](docs/input_files.md)** - Complete list and descriptions  
+🔧 **[Preprocessing Tools](../tools/mom6_neus25_utils/README.md)** - Generate forcing from raw data
+
+### Step 5: Configure Your Run
+
+Configuration involves editing several files:
+
+```mermaid
+flowchart TD
+    A[Configuration Files] --> B[Essential<br/>Always edit]
+    A --> C[Optional<br/>As needed]
+    
+    B --> D[input.nml<br/>Start date, duration]
+    B --> E[data_table<br/>File paths]
+    B --> F[MOM_layout<br/>CPU decomposition]
+    
+    C --> G[MOM_input/override<br/>Physics tuning]
+    C --> H[diag_table<br/>Output variables]
+    C --> I[field_table<br/>Tracers]
+    
+    style B fill:#faa,stroke:#333,stroke-width:2px
+```
+
+Essential configurations:
+
+1. **Set simulation dates** in `input.nml`:
+```fortran
+&coupler_nml
+  current_date = 1993,1,1,0,0,0  ! Start date
+  months = 3                      ! Run duration
+/
+```
+
+2. **Set processor layout**: Copy appropriate layout file
+```bash
+cp configs/MOM_layout.120 configs/MOM_layout  # For 120 cores
+```
+
+3. **Update forcing paths** in `data_table` to point to your INPUT files
+
+📖 **[Configuration Guide](docs/configuration.md)** - All configuration options explained
+
+### Step 6: Run the Model
+
+Test run (interactive):
+```bash
+mpiexec -np 120 ./MOM6
+```
+
+Production run (HPC/SLURM):
+```bash
+sbatch --ntasks=120 mom.sub.x
+```
+
+```mermaid
+flowchart LR
+    A[MOM6] --> B{Execution Mode}
+    B -->|Test| C[Interactive<br/>mpiexec -np N]
+    B -->|Production| D[SLURM<br/>sbatch script]
+    
+    C --> E[Output Files]
+    D --> E
+    
+    E --> F[ocean_*.nc<br/>Diagnostics]
+    E --> G[RESTART/<br/>Continue runs]
+    E --> H[Logs<br/>Debugging]
+    
+    style E fill:#9f9,stroke:#333,stroke-width:2px
+```
+
+📖 **[Running Guide](docs/running.md)** - Run options, restart management, performance tips
+
+## Quick Checklist
+
+Before running, verify:
+
+- [ ] MOM6 executable is compiled and linked
+- [ ] All files listed in `data_table` exist in `INPUT/`
+- [ ] `configs/MOM_layout` matches your processor count
+- [ ] `input.nml` has correct start date
+- [ ] Sufficient disk space for outputs (~5GB per simulated year)
+
+## Data Flow Summary
+
+```mermaid
+flowchart TD
+    A[Raw Data Sources] --> B[Preprocessing Tools]
+    B --> C[Model Input Files]
+    C --> D[MOM6-COBALT Model]
+    D --> E[Model Output]
+    E --> F[Analysis/Visualization]
+    
+    G[ERA5<br/>GLORYS<br/>GloFAS<br/>WOA23] --> A
+    
+    H[Configuration Files<br/>Control the model] --> D
+    
+    style D fill:#f9f,stroke:#333,stroke-width:4px
+    style E fill:#9f9,stroke:#333,stroke-width:2px
+```
+
+## Output Files
+
+The model produces:
+- **NetCDF diagnostics** in current directory (*.nc files)
+- **Restart files** in `RESTART/` for continuing runs
+- **Log files** for debugging
+
+📖 **[Output Guide](docs/outputs.md)** - File formats, variables, post-processing
+
+## Getting Help
+
+- **Common issues**: See [Troubleshooting Guide](docs/troubleshooting.md)
+- **Configuration questions**: Check generated `MOM_parameter_doc.*` files
+- **Model science**: [MOM6 Documentation](https://mom6.readthedocs.io)
+- **This configuration**: [Open an issue](https://github.com/your-repo/issues)
+
+## Next Steps
+
+- For long simulations: See [SLURM Guide](docs/slurm_guide.md)
+- For custom domains: See [Grid Generation](docs/grid_generation.md)
+- For analysis: See [Post-processing Tools](docs/analysis.md)

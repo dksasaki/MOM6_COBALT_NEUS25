@@ -6,7 +6,7 @@ This guide walks through setting up and running the MOM6-COBALT regional ocean-b
 
 ## Prerequisites
 
-- Linux/Unix with MPI, Fortran compiler, NetCDF libraries
+- Linux/Unix with MPI, Fortran compiler, NetCDF libraries (check compilation guide below)
 - HPC is likely required
 
 ## Workflow Overview
@@ -106,8 +106,8 @@ Forcing: ERA5, GLORYS, GloFAS, nudging files → Generate with tools
    - Rivers: GloFAS discharge + nutrients
    - Generate using preprocessing tools or download pre-processed -->
 
-📖 **[Input Files Guide](docs/input_files.md)** - Complete list and descriptions  
-🔧 **[Preprocessing Tools](../tools/mom6_neus25_utils/README.md)** - Generate forcing from raw data
+[Input Files Guide](docs/input_files.md)
+[Preprocessing Tools](../tools/mom6_neus25_utils/README.md)
 
 ### Step 5: Edit Configuration
 
@@ -159,7 +159,7 @@ In `NEUS25.COBALT` dir.:
 - `diag_table` - Configure output variables
 
 
-[Configuration Guide](docs/configuration.md) - All configuration options explained
+[Configuration Guide](docs/configuration.md)
 
 ### Step 6: Execute Model
 
@@ -180,7 +180,7 @@ The model will produce:
 - Restart files in `RESTART/` directory
 - Log files for debugging
 
-📖 **[Running Guide](docs/running.md)** - Run options, restart management, performance tips
+[Running Guide](docs/running.md)
 
 ## Quick Checklist
 
@@ -200,17 +200,17 @@ The model produces:
 - **Parameter documentation** - `MOM_parameter_doc.*` files
 - **Log files** - Runtime information and errors
 
-📖 **[Output Guide](docs/outputs.md)** - File formats, variables, post-processing
+[Output Guide](docs/outputs.md)
 
-## Getting Help
+# ## Getting Help
 
-- **Common issues**: See [Troubleshooting Guide](docs/troubleshooting.md)
-- **Parameter details**: Check generated `MOM_parameter_doc.*` files
-- **Model science**: [MOM6 Documentation](https://mom6.readthedocs.io)
-- **This configuration**: [Open an issue](https://github.com/your-repo/issues)
+# - **Common issues**: See [Troubleshooting Guide](docs/troubleshooting.md)
+# - **Parameter details**: Check generated `MOM_parameter_doc.*` files
+# - **Model science**: [MOM6 Documentation](https://mom6.readthedocs.io)
+# - **This configuration**: [Open an issue](https://github.com/your-repo/issues)
 
-## Next Steps
+# ## Next Steps
 
-- For long simulations: See [SLURM Guide](docs/slurm_guide.md)
-- For custom domains: See [Grid Generation](docs/grid_generation.md)
-- For analysis: See [Post-processing Tools](docs/analysis.md) -->
+# - For long simulations: See [SLURM Guide](docs/slurm_guide.md)
+# - For custom domains: See [Grid Generation](docs/grid_generation.md)
+# - For analysis: See [Post-processing Tools](docs/analysis.md) -->

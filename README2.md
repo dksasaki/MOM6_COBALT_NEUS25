@@ -38,7 +38,7 @@ flowchart LR
 Continuing from INPUT
 ```mermaid
 flowchart LR
-    D0[3. git clone/create work dir. from MOM6_COBALT_NEUS25 Repository] --> A
+    D0[work dir.] --> A
     A[5. Edit Configuration files] --> D
     
     B[INPUT/]
@@ -52,7 +52,7 @@ flowchart LR
     G --> D
     F -->|No| H[Simulation ended]
     
-    style D0 fill:#ffa500,stroke:#333,stroke-width:4px
+    style D0 fill:#ffd,stroke:#333,stroke-width:2px
     style B fill:#afd,stroke:#333,stroke-width:2px
     style E fill:#9f9,stroke:#333,stroke-width:2px
 ```

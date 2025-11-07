@@ -13,6 +13,8 @@ This guide walks through setting up and running the MOM6-COBALT regional ocean-b
 
 ## Workflow Overview
 
+The general workflow is presented below. Each numbered step is documented b
+
 ### Setup Phase
 ```mermaid
 flowchart LR
@@ -27,6 +29,8 @@ flowchart LR
     style C fill:#f9f,stroke:#333,stroke-width:4px
     style H fill:#afd,stroke:#333,stroke-width:2px
 ```
+
+
 
 ### Run Phase
 ```mermaid
@@ -44,6 +48,8 @@ flowchart LR
     style A fill:#afd,stroke:#333,stroke-width:2px
     style E fill:#9f9,stroke:#333,stroke-width:2px
 ```
+
+Each step is documented below.
 
 ## Setup Process
 

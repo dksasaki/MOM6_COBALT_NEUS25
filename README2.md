@@ -38,10 +38,12 @@ flowchart LR
 Continuing from INPUT
 ```mermaid
 flowchart LR
+    D0[3. git clone/create work dir. from MOM6_COBALT_NEUS25 Repository] --> A
     A[5. Edit Configuration files] --> D
     
     B[INPUT/]
     
+
     B --> D[6. Execute Model]
     D --> E[Output<br/>- NetCDF files<br/>- Restart files<br/>- Logs]
     

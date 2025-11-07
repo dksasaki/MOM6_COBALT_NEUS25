@@ -63,16 +63,6 @@ git submodule update --recursive
 
 Build the executable for your system. This step is system-specific and produces the `MOM6` executable.
 
-```mermaid
-flowchart LR
-    A[Source Code] --> B[Compiler<br/>+ Libraries]
-    B --> C[MOM6 executable]
-    
-    D[Required:<br/>- Fortran compiler<br/>- MPI<br/>- NetCDF<br/>- HDF5] --> B
-    
-    style C fill:#f9f,stroke:#333,stroke-width:4px
-```
-
 📖 **[Compilation Guide](docs/compilation.md)** - Detailed build instructions  
 🔗 **[GFDL Instructions](https://github.com/NOAA-GFDL/MOM6/wiki/Getting-Started)** - Official MOM6 build docs
 
@@ -103,27 +93,6 @@ NEUS25.COBALT/
 
 ### Step 4: Obtain Input Files
 
-```mermaid
-flowchart TD
-    A[Input Files] --> B[Static Files<br/>One-time download]
-    A --> C[Time-Varying Forcing<br/>Per simulation period]
-    
-    B --> D[Grid files<br/>ocean_hgrid.nc<br/>ocean_static.nc]
-    B --> E[Initial Conditions<br/>WOA23 + ESM4]
-    
-    C --> F[Atmospheric<br/>ERA5 - 9 variables]
-    C --> G[Ocean BC<br/>GLORYS - 5 variables]
-    C --> H[Rivers<br/>GloFAS + nutrients]
-    
-    D --> I[INPUT/]
-    E --> I
-    F --> I
-    G --> I
-    H --> I
-    
-    style I fill:#9f9,stroke:#333,stroke-width:2px
-```
-
 1. **Static files** (grid, initial conditions)
    - Download from Zenodo: [DOI]
    - Place in `INPUT/` directory
@@ -139,21 +108,6 @@ flowchart TD
 
 Configuration involves editing several files:
 
-```mermaid
-flowchart TD
-    A[Configuration Files] --> B[Essential<br/>Always edit]
-    A --> C[Optional<br/>As needed]
-    
-    B --> D[input.nml<br/>Start date, duration]
-    B --> E[data_table<br/>File paths]
-    B --> F[MOM_layout<br/>CPU decomposition]
-    
-    C --> G[MOM_input/override<br/>Physics tuning]
-    C --> H[diag_table<br/>Output variables]
-    C --> I[field_table<br/>Tracers]
-    
-    style B fill:#faa,stroke:#333,stroke-width:2px
-```
 
 Essential configurations:
 
@@ -213,24 +167,6 @@ Before running, verify:
 - [ ] `configs/MOM_layout` matches your processor count
 - [ ] `input.nml` has correct start date
 - [ ] Sufficient disk space for outputs (~5GB per simulated year)
-
-## Data Flow Summary
-
-```mermaid
-flowchart TD
-    A[Raw Data Sources] --> B[Preprocessing Tools]
-    B --> C[Model Input Files]
-    C --> D[MOM6-COBALT Model]
-    D --> E[Model Output]
-    E --> F[Analysis/Visualization]
-    
-    G[ERA5<br/>GLORYS<br/>GloFAS<br/>WOA23] --> A
-    
-    H[Configuration Files<br/>Control the model] --> D
-    
-    style D fill:#f9f,stroke:#333,stroke-width:4px
-    style E fill:#9f9,stroke:#333,stroke-width:2px
-```
 
 ## Output Files
 

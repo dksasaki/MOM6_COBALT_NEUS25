@@ -426,7 +426,6 @@ nudging_monthly_2017.nc
 nudging_monthly_2018.nc
 nudging_monthly_2019.nc
 nudging_monthly_tracer_1993.nc
-nwa25_interped.nc
 ocean_cobalt_airsea_flux.res.nc
 ocean_h2.nc
 ocean_hgrid.nc

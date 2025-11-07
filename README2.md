@@ -1,6 +1,14 @@
-# NEUS25-MOM6-COBALT Setup Guide
+# MOM6-COBALT-NEUS25v1.0
+
+**A High-Resolution Coupled Physical-Biogeochemical Model of the Northeastern US Continental Shelf**
 
 ## Overview
+
+Regional configuration for the Northeast US shelf (30-50°N, 80-60°W) at ~1/25° horizontal resolution:
+- **Ocean Model**: MOM6 with 75 vertical levels
+- **Biogeochemistry**: COBALT with 33+ tracers (nutrients, carbon, plankton)
+- **Sea Ice**: SIS2 dynamic-thermodynamic model
+- **Period**: 1993-2019 (extensible)
 
 This guide walks through setting up and running the MOM6-COBALT regional ocean-biogeochemistry model for the Northeast US continental shelf.
 

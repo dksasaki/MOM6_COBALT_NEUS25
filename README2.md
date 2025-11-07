@@ -63,7 +63,7 @@ git submodule update --recursive
 
 ### Step 2: Build Executable
 
-Compile MOM6 for your system. This step is system-specific and produces the `MOM6` executable.
+Compile MOM6 for your system. This step is system-specific and produces the `MOM6` executable. The executable can be built once and be used for different experiments.
 
 📖 **[Compilation Guide](docs/compilation.md)** - Detailed build instructions  
 🔗 **[GFDL Instructions](https://github.com/NOAA-GFDL/MOM6/wiki/Getting-Started)** - Official MOM6 build docs

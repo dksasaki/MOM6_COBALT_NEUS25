@@ -71,7 +71,7 @@ git submodule update --recursive
 Compile MOM6 for your system. This step is system-specific and produces the `MOM6` executable. The executable can be built once and be used for different experiments.
 
 - [Compilation Guide](docs/compilation.md) - Detailed build instructions  
-- [GFDL Instructions](https://github.com/NOAA-GFDL/MOM6/wiki/Getting-Started)
+- [GFDL Instructions](https://github.com/NOAA-GFDL/MOM6-examples/wiki)
 
 ### Step 3: git clone MOM6_COBALT_NEUS25 repository
 

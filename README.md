@@ -1,5 +1,7 @@
 # MOM6-COBALT-NEUS25v1.0
 
+<!-- IF YOU ARE CHANGING THESE INSTRUCTIONS, AVOID HAVING MORE THAN TWO LEVELS OF LINKS. DON'T CONFUSE THE USERS! -->
+
 **A High-Resolution Coupled Physical-Biogeochemical Model of the Northeastern US Continental Shelf**
 
 ## Overview

@@ -38,7 +38,7 @@ flowchart LR
 Continuing from INPUT
 ```mermaid
 flowchart LR
-    A[5. Edit Configuration <br/> <br/> Essential Files<br/>- input.nml<br/>- MOM_layout<br/>- MOM_input<br/>- MOM_override<br/>- diag_table<br/>- field_table<br/>- data_table] --> D
+    A[5. Edit Configuration files] --> D
     
     B[INPUT/]
     

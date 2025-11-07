@@ -35,7 +35,7 @@ flowchart LR
 ### Run Phase
 ```mermaid
 flowchart LR
-    A[INPUT/] --> B[5. Edit Configuration <br/> <br/> Essential Files<br/>- input.nml<br/>- data_table<br/>- MOM_layout<br/> <br/>Optional Files<br/>- diag_table<br/>- field_table<br/>- MOM_input<br/>- MOM_override]
+    A[INPUT/] --> B[5. Edit Configuration <br/> <br/> Essential Files<br/>- input.nml<br/>- MOM_layout<br/>- MOM_input<br/>- MOM_override<br/>- diag_table<br/>- field_table<br/>- data_table]
     
     B --> D[6. Execute Model]
     D --> E[Output<br/>- NetCDF files<br/>- Restart files<br/>- Logs]

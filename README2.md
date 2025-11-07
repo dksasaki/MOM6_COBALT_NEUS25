@@ -89,6 +89,10 @@ ln -s /path/to/compiled/MOM6COBALT .
 
 Place in the `/your/work/dir/NEUS25.COBALT/INPUT/:
 
+Static: Grid, IC, masks, tides, others → [Download from Zenodo]
+Forcing: ERA5, GLORYS, GloFAS, nudging files → Generate with tools
+
+<!-- 
 1. **Static files** (one-time download)
    - Grid files (ocean_hgrid.nc, ocean_static.nc)
    - Initial conditions (MOM6, COBALT)
@@ -100,7 +104,7 @@ Place in the `/your/work/dir/NEUS25.COBALT/INPUT/:
    - Atmosphere: ERA5 fields
    - Ocean BC: GLORYS boundaries
    - Rivers: GloFAS discharge + nutrients
-   - Generate using preprocessing tools or download pre-processed
+   - Generate using preprocessing tools or download pre-processed -->
 
 📖 **[Input Files Guide](docs/input_files.md)** - Complete list and descriptions  
 🔧 **[Preprocessing Tools](../tools/mom6_neus25_utils/README.md)** - Generate forcing from raw data

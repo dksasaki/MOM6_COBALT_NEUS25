@@ -73,6 +73,12 @@ Compile MOM6 for your system. This step is system-specific and produces the `MOM
 Set up your simulation directory with the NEUS25 configuration:
 
 ```bash
+# change to a directory of your choice, where we will
+# download MOM6_COBALT_NEUS25
+cd /your/directory/choice
+git clone https://github.com/dksasaki/MOM6_COBALT_NEUS25.git
+cd MOM6_COBALT_NEUS25
+
 # Copy the NEUS25 configuration
 cp -r exps/NEUS25.COBALT /your/work/dir/
 
@@ -86,13 +92,32 @@ ln -s /path/to/compiled/MOM6 .
 Directory structure after setup:
 ```
 NEUS25.COBALT/
-├── MOM6 → (executable)
-├── INPUT/              # Will contain forcing files
-├── configs/            # Configuration files
-├── input.nml          # Main control file
-├── data_table         # Forcing file paths
-├── diag_table         # Output configuration
-└── field_table        # Tracer setup
+├── README.md
+├── configs
+│   ├── MOM_input                 # MOM6 configuration file
+│   ├── MOM_layout                # MOM6 parallelization file
+│   ├── MOM_override              # overrides MOM6 configuration*
+│   ├── MOM_override.template     # overrides MOM6 configuration file (template)
+│   ├── COBALT_input              # COBALT configuration file
+│   ├── COBALT_override           # overrides COBALT configuration file
+│   ├── SIS_input                 # SIS configuration file
+│   ├── SIS_layout                # SIS parallelization file
+│   └── SIS_override              # overrides SIS configuration file
+├── input.nml                     # main configuration File
+├── data_table.template           # determines forcing and associated model components (template)
+├── data_table                    # determines forcing and associated model components*
+├── diag_table                    # output configuration
+├── field_table                   # configure boundary files and COBALT constants
+├── MOM_parameter_doc.all         # MOM6 configuration (produced after MOM6 starts to run)
+├── MOM_parameter_doc.debugging   # MOM6 configuration (produced after MOM6 starts to run)
+├── MOM_parameter_doc.layout      # MOM6 configuration (produced after MOM6 starts to run)
+├── MOM_parameter_doc.short       # MOM6 configuration (produced after MOM6 starts to run)
+├── mom.sub.x                     # slurm script for Northeastern's HPC (Explorer)
+├── INPUT\                        # input file directory
+├── outputs_raw\                  # output file directory
+└── restarts_raw\                 # restart file directory
+
+*will not be present after the setting up the directory structure
 ```
 
 ### Step 4: Gather Input Data

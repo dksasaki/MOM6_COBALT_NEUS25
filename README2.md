@@ -29,7 +29,7 @@ flowchart LR
 
     F[4. Gather Input Data ]
     F --> H[INPUT/]
-    
+    style D fill:#ffa500,stroke:#333,stroke-width:4px
     style C fill:#f9f,stroke:#333,stroke-width:4px
     style H fill:#afd,stroke:#333,stroke-width:2px
     style E fill:#ffd,stroke:#333,stroke-width:2px
@@ -52,6 +52,7 @@ flowchart LR
     G --> D
     F -->|No| H[Simulation ended]
     
+    style D0 fill:#ffa500,stroke:#333,stroke-width:4px
     style B fill:#afd,stroke:#333,stroke-width:2px
     style E fill:#9f9,stroke:#333,stroke-width:2px
 ```

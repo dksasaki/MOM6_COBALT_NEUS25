@@ -103,7 +103,7 @@ Place in the `/your/work/dir/NEUS25.COBALT/INPUT/:
 - Forcing: ERA5, GLORYS, GloFAS, nudging files → Generate with tools
 
 - [Input Files Guide](docs/input_files.md)
-- [Preprocessing Tools](../tools/mom6_neus25_utils/README.md)
+- [Preprocessing Tools](https://github.com/dksasaki/mom6_neus25_utils/tree/b8df0f6c35631a74dfd0c99337633211494ca13a)
 
 ### Step 5: Edit Configuration
 

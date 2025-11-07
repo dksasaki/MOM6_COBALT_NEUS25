@@ -21,12 +21,9 @@ flowchart LR
     B --> C{MOM6 executable}
     C --> D[3. Setup Directory]
     
-    D --> E[4. Get Input Files]
-    E --> F[Static Files<br/>- Grid<br/>- Initial Conditions]
-    E --> G[Forcing Files<br/>- Atmosphere<br/>- Ocean BC<br/>- Rivers]
-    
-    F --> H[INPUT/]
-    G --> H
+    D --> E[4. Get Input Files <br/> <br/>Static Files<br/>- Grid<br/>- Initial Conditions <br/> <br/>Forcing Files<br/>- Atmosphere<br/>- Ocean BC<br/>- Rivers]
+
+    E --> H[INPUT/]
     
     style C fill:#f9f,stroke:#333,stroke-width:4px
     style H fill:#afd,stroke:#333,stroke-width:2px

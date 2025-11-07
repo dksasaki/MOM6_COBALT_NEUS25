@@ -27,7 +27,7 @@ flowchart LR
     
     E --> H
 
-    F[4. Gather Input Data ]
+    F[4. Gather input data ]
     F --> H[INPUT/]
     style D fill:#ffd,stroke:#333,stroke-width:2px
     style C fill:#f9f,stroke:#333,stroke-width:4px
@@ -131,7 +131,7 @@ NEUS25.COBALT/
 *will not be present after the setting up the directory structure
 ```
 
-### Step 4: Gather Input Data
+### Step 4: Gather input data
 
 Obtain all required input files and place them in the `INPUT/` directory:
 

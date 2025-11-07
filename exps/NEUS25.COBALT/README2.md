@@ -140,21 +140,6 @@ Production run (HPC/SLURM):
 sbatch --ntasks=120 mom.sub.x
 ```
 
-```mermaid
-flowchart LR
-    A[MOM6] --> B{Execution Mode}
-    B -->|Test| C[Interactive<br/>mpiexec -np N]
-    B -->|Production| D[SLURM<br/>sbatch script]
-    
-    C --> E[Output Files]
-    D --> E
-    
-    E --> F[ocean_*.nc<br/>Diagnostics]
-    E --> G[RESTART/<br/>Continue runs]
-    E --> H[Logs<br/>Debugging]
-    
-    style E fill:#9f9,stroke:#333,stroke-width:2px
-```
 
 📖 **[Running Guide](docs/running.md)** - Run options, restart management, performance tips
 

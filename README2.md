@@ -120,18 +120,14 @@ Configure the model for your simulation by editing these files:
 
 #### Essential Files (must edit):
 
-- **`input.nml`** - Set simulation timing:
+- **`input.nml`** - Set coupling configurations
 - **`configs/MOM_input`** - Tune physics parameters
-- **`configs/MOM_override`** - Override specific settings
-- **`configs/MOM_layout`** - Match processor count:
-- **`data_table`** - Update paths to your INPUT files
-- **`diag_table`** - Modify output variables and frequencies
-- **`field_table`** - Adjust tracer initialization
+- **`configs/MOM_override`** - Override physics parameters
+- **`configs/MOM_layout`** - Grid layout for parallelization
+- **`data_table`** - Update paths to your input files
+- **`field_table`** - Configure boundary files and COBALT parameters
+- **`diag_table`** - Configure output variables
 
-
-```bash
-cp configs/MOM_layout.120 configs/MOM_layout  # For 120 cores
-```
 
 
 📖 **[Configuration Guide](docs/configuration.md)** - All configuration options explained

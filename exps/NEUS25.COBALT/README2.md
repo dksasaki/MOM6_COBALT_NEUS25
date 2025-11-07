@@ -6,6 +6,7 @@ This guide walks through setting up and running the MOM6-COBALT regional ocean-b
 
 ## Workflow Overview
 
+### Setup Phase
 ```mermaid
 flowchart LR
     A[1. Get Code] --> B[2. Compile]
@@ -16,21 +17,30 @@ flowchart LR
     E --> F[Static Files<br/>- Grid<br/>- Initial Conditions]
     E --> G[Forcing Files<br/>- Atmosphere<br/>- Ocean BC<br/>- Rivers]
     
-    F --> H[5. Configure]
+    F --> H[INPUT/]
     G --> H
     
-    H --> I[Edit Config Files<br/>- input.nml<br/>- data_table<br/>- MOM_layout]
-    
-    I --> J[6. Run Model]
-    J --> K[Output<br/>- NetCDF files<br/>- Restart files<br/>- Logs]
-    
-    K --> L{Continue?}
-    L -->|Yes| M[Update Config]
-    M --> J
-    L -->|No| N[Analysis]
-    
     style C fill:#f9f,stroke:#333,stroke-width:4px
-    style K fill:#9f9,stroke:#333,stroke-width:2px
+    style H fill:#afd,stroke:#333,stroke-width:2px
+```
+
+### Run Phase
+```mermaid
+flowchart LR
+    A[INPUT/] --> B[5. Configure]
+    
+    B --> C[Edit Config Files<br/>- input.nml<br/>- data_table<br/>- MOM_layout]
+    
+    C --> D[6. Run Model]
+    D --> E[Output<br/>- NetCDF files<br/>- Restart files<br/>- Logs]
+    
+    E --> F{Continue?}
+    F -->|Yes| G[Update Config]
+    G --> D
+    F -->|No| H[Analysis]
+    
+    style A fill:#afd,stroke:#333,stroke-width:2px
+    style E fill:#9f9,stroke:#333,stroke-width:2px
 ```
 
 ## Prerequisites

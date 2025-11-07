@@ -21,8 +21,8 @@ flowchart LR
     A[1. git clone CEFI Repository] --> B[2. build MOM6/dependencies]
     B -.-> |compile| C{MOM6 executable}
     
-    D[3. git clone/create work directory from MOM6_COBALT_NEUS25 Repository]
-    C -.-> |link/copy to| E[work directory]
+    D[3. git clone/create work dir. from MOM6_COBALT_NEUS25 Repository]
+    C -.-> |link/copy to| E[work dir.]
     D --> E
     
     E --> H

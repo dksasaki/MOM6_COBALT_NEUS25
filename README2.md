@@ -96,7 +96,7 @@ cp -r exps/NEUS25.COBALT /your/work/dir/
 # Navigate to your working directory
 cd /your/work/dir/NEUS25.COBALT/
 
-# Link the compiled executable
+# Link the compiled executable obtained in Step 2.
 ln -s /path/to/compiled/MOM6 .
 ```
 

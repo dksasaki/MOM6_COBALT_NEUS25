@@ -92,26 +92,10 @@ Place in the `/your/work/dir/NEUS25.COBALT/INPUT/:
 Static: Grid, IC, masks, tides, others → [Download from Zenodo]
 Forcing: ERA5, GLORYS, GloFAS, nudging files → Generate with tools
 
-<!-- 
-1. **Static files** (one-time download)
-   - Grid files (ocean_hgrid.nc, ocean_static.nc)
-   - Initial conditions (MOM6, COBALT)
-   - Auxiliary files (masks, tidal harmonics)
-   - bgc lateral boundary files
-   - Download from Zenodo: [DOI]
-
-2. **Forcing files** (time-varying, per simulation period)
-   - Atmosphere: ERA5 fields
-   - Ocean BC: GLORYS boundaries
-   - Rivers: GloFAS discharge + nutrients
-   - Generate using preprocessing tools or download pre-processed -->
-
 [Input Files Guide](docs/input_files.md)
 [Preprocessing Tools](../tools/mom6_neus25_utils/README.md)
 
 ### Step 5: Edit Configuration
-
-
 
 #### Essential Files (must edit) :
 
@@ -135,12 +119,12 @@ Run the model using one of these approaches:
 **Test run** (interactive):
 ```bash
 mpiexec -np 120 ./MOM6
-<!-- ```
+ ```
 
 **Production run** (HPC/SLURM):
 ```bash
 sbatch --ntasks=120 mom.sub.x
-``` -->
+``` 
 
 The model will produce:
 - NetCDF diagnostic files (as specified in `diag_table`)
@@ -158,26 +142,3 @@ Before executing, verify:
 - [ ] `configs/MOM_layout` matches your processor count
 - [ ] `input.nml` has correct start date and duration
 - [ ] Sufficient disk space for outputs (~5GB per simulated year)
-<!-- 
-## Output Files
-
-The model produces:
-- **NetCDF diagnostics** - Variables specified in `diag_table`
-- **Restart files** - In `RESTART/` for continuing runs
-- **Parameter documentation** - `MOM_parameter_doc.*` files
-- **Log files** - Runtime information and errors
-
-[Output Guide](docs/outputs.md)
-
-# ## Getting Help
-
-# - **Common issues**: See [Troubleshooting Guide](docs/troubleshooting.md)
-# - **Parameter details**: Check generated `MOM_parameter_doc.*` files
-# - **Model science**: [MOM6 Documentation](https://mom6.readthedocs.io)
-# - **This configuration**: [Open an issue](https://github.com/your-repo/issues)
-
-# ## Next Steps
-
-# - For long simulations: See [SLURM Guide](docs/slurm_guide.md)
-# - For custom domains: See [Grid Generation](docs/grid_generation.md)
-# - For analysis: See [Post-processing Tools](docs/analysis.md) -->

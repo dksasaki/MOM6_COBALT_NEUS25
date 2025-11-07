@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  mom6:
+    # image: nilodna/docker4roms:latest
+    build:
+        context: .
+        dockerfile: ./Dockerfile
+    container_name: mom6
+    tty: true
+    volumes:
+      - ../../.:/home/user123/MOM6-examples

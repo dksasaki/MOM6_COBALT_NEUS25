@@ -43,7 +43,7 @@ flowchart LR
     E --> F{Continue Run?}
     F -->|Yes| G[Update Settings]
     G --> D
-    F -->|No| H[Analyze Results]
+    F -->|No| H[Simulation ended]
     
     style A fill:#afd,stroke:#333,stroke-width:2px
     style E fill:#9f9,stroke:#333,stroke-width:2px

@@ -6,16 +6,12 @@ This guide walks through setting up and running the MOM6-COBALT regional ocean-b
 
 ## Prerequisites
 
-- Linux/Unix environment with MPI
-- Fortran compiler (Intel or GNU)
-- NetCDF libraries
-- ~2TB storage for inputs, ~5TB for outputs
+- Linux/Unix with MPI, Fortran compiler, NetCDF libraries
+- HPC is likely required
 
 ## Workflow Overview
 
-The general workflow is presented below.
-
-### Setup and execution
+### Setup phase
 ```mermaid
 flowchart LR
     A[1. git clone CEFI repository] --> B[2. build MOM6/dependencies]
@@ -35,7 +31,7 @@ flowchart LR
     style E fill:#ffa500,stroke:#333,stroke-width:4px
 ```
 
-Continuing from INPUT
+### Run Phase
 ```mermaid
 flowchart LR
     D0[work dir.] --> A
@@ -63,8 +59,6 @@ Each step is documented below.
 
 ### Step 1: git clone CEFI repository
 
-Get the MOM6 source code with the NEUS25 configuration:
-
 ```bash
 git clone --recursive https://github.com/NOAA-GFDL/CEFI-regional-MOM6
 cd CEFI-regional-MOM6
@@ -72,38 +66,28 @@ git checkout 214d998fba1776261df4af250d17663c272aa218
 git submodule update --recursive
 ```
 
-### Step 2: Build Executable
+### Step 2: build MOM6/dependencies
 
 Compile MOM6 for your system. This step is system-specific and produces the `MOM6` executable. The executable can be built once and be used for different experiments.
 
-📖 **[Compilation Guide](docs/compilation.md)** - Detailed build instructions  
-🔗 **[GFDL Instructions](https://github.com/NOAA-GFDL/MOM6/wiki/Getting-Started)** - Official MOM6 build docs
+- [Compilation Guide](docs/compilation.md) - Detailed build instructions  
+- [GFDL Instructions](https://github.com/NOAA-GFDL/MOM6/wiki/Getting-Started)
 
 ### Step 3: git clone MOM6_COBALT_NEUS25 repository
 
-Set up your simulation directory with the NEUS25 configuration:
 
 ```bash
-# change to a directory of your choice, where we will
-# download MOM6_COBALT_NEUS25
-cd /your/directory/choice
+cd /your/directory/of/choice
 git clone https://github.com/dksasaki/MOM6_COBALT_NEUS25.git
-cd MOM6_COBALT_NEUS25
-
-# Copy the NEUS25 configuration
-cp -r exps/NEUS25.COBALT /your/work/dir/
-
-# Navigate to your working directory
+cp -r MOM6_COBALT_NEUS25/exps/NEUS25.COBALT /your/work/dir/
 cd /your/work/dir/NEUS25.COBALT/
-
-# Link the compiled executable obtained in Step 2.
 ln -s /path/to/compiled/MOM6COBALT .
 ```
 
 
 ### Step 4: Gather input data
 
-Obtain all required input files and place them in the `INPUT/` directory:
+Place in the `/your/work/dir/NEUS25.COBALT/INPUT/:
 
 1. **Static files** (one-time download)
    - Grid files (ocean_hgrid.nc, ocean_static.nc)
@@ -124,7 +108,7 @@ Obtain all required input files and place them in the `INPUT/` directory:
 ### Step 5: Edit Configuration
 
 
-Directory structure after setup:
+<!-- Directory structure after setup:
 ```
 NEUS25.COBALT/
 ├── README.md
@@ -155,18 +139,18 @@ NEUS25.COBALT/
 *will not be present after the setting up the directory structure
 ```
 
-Configure the model for your simulation by editing these files:
+Configure the model for your simulation by editing these files: -->
 
 
 #### Essential Files (must edit):
 
-- **`input.nml`** - Set coupling configurations
-- **`configs/MOM_input`** - Tune physics parameters
-- **`configs/MOM_override`** - Override physics parameters
-- **`configs/MOM_layout`** - Grid layout for parallelization
-- **`data_table`** - Update paths to your input files
-- **`field_table`** - Configure boundary files and COBALT parameters
-- **`diag_table`** - Configure output variables
+- `input.nml` - Set coupling configurations
+- `configs/MOM_input` - Tune physics parameters
+- `configs/MOM_override` - Override physics parameters (need to edit MOM_override.template)
+- `configs/MOM_layout` - Grid layout for parallelization (parallization is configured here)
+- `data_table` - Update paths to your input files (need to edit data_table.template)
+- `field_table` - Configure boundary files and COBALT parameters
+- `diag_table` - Configure output variables
 
 
 

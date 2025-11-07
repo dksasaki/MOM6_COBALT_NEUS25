@@ -5,21 +5,8 @@
 ### Clone the repository with submodules
 ```bash
 git clone --recursive https://github.com/NOAA-GFDL/CEFI-regional-MOM6
-```
-
-### Navigate to the repository
-```bash
 cd CEFI-regional-MOM6
-```
-
-### Checkout the specific commit
-```bash
 git checkout 214d998fba1776261df4af250d17663c272aa218
-
-```
-
-### Update submodules to match the commit
-```bash
 git submodule update --recursive
 ```
 

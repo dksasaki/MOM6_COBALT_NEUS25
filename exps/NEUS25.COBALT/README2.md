@@ -41,7 +41,7 @@ flowchart LR
     D --> E[Output<br/>- NetCDF files<br/>- Restart files<br/>- Logs]
     
     E --> F{Continue Run?}
-    F -->|Yes| G[Update Settings]
+    F -->|Yes| G[Restart model]
     G --> D
     F -->|No| H[Simulation ended]
     

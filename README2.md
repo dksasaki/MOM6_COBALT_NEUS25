@@ -146,7 +146,9 @@ NEUS25.COBALT/
 Configure the model for your simulation by editing these files: -->
 
 
-#### Essential Files (must edit):
+#### Essential Files (must edit) :
+
+In `NEUS25.COBALT` dir.:
 
 - `input.nml` - Set coupling configurations
 - `configs/MOM_input` - Tune physics parameters
@@ -158,7 +160,7 @@ Configure the model for your simulation by editing these files: -->
 
 
 
-📖 **[Configuration Guide](docs/configuration.md)** - All configuration options explained
+[Configuration Guide](docs/configuration.md) - All configuration options explained
 
 ### Step 6: Execute Model
 
@@ -190,7 +192,7 @@ Before executing, verify:
 - [ ] `configs/MOM_layout` matches your processor count
 - [ ] `input.nml` has correct start date and duration
 - [ ] Sufficient disk space for outputs (~5GB per simulated year)
-
+<!-- 
 ## Output Files
 
 The model produces:
@@ -212,4 +214,4 @@ The model produces:
 
 - For long simulations: See [SLURM Guide](docs/slurm_guide.md)
 - For custom domains: See [Grid Generation](docs/grid_generation.md)
-- For analysis: See [Post-processing Tools](docs/analysis.md)
+- For analysis: See [Post-processing Tools](docs/analysis.md) -->

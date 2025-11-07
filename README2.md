@@ -37,7 +37,9 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    A[INPUT/] --> B[5. Edit Configuration <br/> <br/> Essential Files<br/>- input.nml<br/>- MOM_layout<br/>- MOM_input<br/>- MOM_override<br/>- diag_table<br/>- field_table<br/>- data_table]
+    A[5. Edit Configuration <br/> <br/> Essential Files<br/>- input.nml<br/>- MOM_layout<br/>- MOM_input<br/>- MOM_override<br/>- diag_table<br/>- field_table<br/>- data_table] --> D
+    
+    B[INPUT/]
     
     B --> D[6. Execute Model]
     D --> E[Output<br/>- NetCDF files<br/>- Restart files<br/>- Logs]
@@ -47,7 +49,7 @@ flowchart LR
     G --> D
     F -->|No| H[Simulation ended]
     
-    style A fill:#afd,stroke:#333,stroke-width:2px
+    style B fill:#afd,stroke:#333,stroke-width:2px
     style E fill:#9f9,stroke:#333,stroke-width:2px
 ```
 

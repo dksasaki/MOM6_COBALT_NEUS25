@@ -10,9 +10,31 @@ git checkout 214d998fba1776261df4af250d17663c272aa218
 git submodule update --recursive
 ```
 
-After updating the repository, we need to compile the model. Since compilation is system dependent, so this task is left to the reader.
+### Compile Model
+System-specific compilation required. See [GFDL MOM6 build instructions](https://github.com/NOAA-GFDL/MOM6/wiki/Getting-Started).
 
----
+### Prepare Run Directory
+```bash
+# Copy this configuration to work directory
+cp -r exps/NEUS25.COBALT /path/to/workdir/
+
+# Get static input files (grid, initial conditions)
+# Download from Zenodo: [DOI]
+
+# Generate forcing files using tools/mom6_neus25_utils
+# Place all files in INPUT/
+```
+
+## Configuration Files
+
+| File | Purpose | Key Settings |
+|------|---------|--------------|
+| `input.nml` | Runtime control | Timesteps, I/O, simulation length |
+| `configs/MOM_input` | Ocean physics | Resolution, mixing, advection |
+| `configs/COBALT_input` | Biogeochemistry | Tracers, rates, ecosystem |
+| `configs/SIS_input` | Sea ice | Thermodynamics, rheology |
+| `diag_table` | Output control | Variables, frequencies |
+| `data_table.template` | Forcing paths | Update yearly with file locations |
 
 ## NEUS25 SLURM Job Script Documentation
 

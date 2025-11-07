@@ -18,7 +18,7 @@ The general workflow is presented below.
 ### Setup and execution
 ```mermaid
 flowchart LR
-    A[1. git clone CEFI Repository] --> B[2. Build MOM6]
+    A[1. git clone CEFI Repository] --> B[2. Build MOM6/dependencies]
     B -.-> |compile| C{MOM6 executable}
     
     D[3. git clone/Create Work Directory from MOM6_COBALT_NEUS25]

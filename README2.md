@@ -70,7 +70,7 @@ git submodule update --recursive
 
 Compile MOM6 for your system. This step is system-specific and produces the `MOM6` executable. The executable can be built once and be used for different experiments.
 
-- [Compilation Guide](docs/compilation.md) - Detailed build instructions  
+- [Compilation Guide](docs/compilation.md) 
 - [GFDL Instructions](https://github.com/NOAA-GFDL/MOM6-examples/wiki)
 
 ### Step 3: git clone MOM6_COBALT_NEUS25 repository
@@ -92,8 +92,8 @@ Place in the `/your/work/dir/NEUS25.COBALT/INPUT/:
 - Static: Grid, IC, masks, tides, others → [Download from Zenodo]
 - Forcing: ERA5, GLORYS, GloFAS, nudging files → Generate with tools
 
-[Input Files Guide](docs/input_files.md)
-[Preprocessing Tools](../tools/mom6_neus25_utils/README.md)
+- [Input Files Guide](docs/input_files.md)
+- [Preprocessing Tools](../tools/mom6_neus25_utils/README.md)
 
 ### Step 5: Edit Configuration
 

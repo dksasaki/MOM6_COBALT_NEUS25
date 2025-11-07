@@ -21,7 +21,7 @@ flowchart LR
     A[1. git clone CEFI repository] --> B[2. build MOM6/dependencies]
     B -.-> |compile| C{MOM6 executable}
     
-    D[3. git clone MOM6_COBALT_NEUS25 Repository]
+    D[3. git clone MOM6_COBALT_NEUS25 repository]
     C -.-> |link/copy to| E[work dir.]
     D -.-> |copy to| E
     
@@ -79,7 +79,7 @@ Compile MOM6 for your system. This step is system-specific and produces the `MOM
 📖 **[Compilation Guide](docs/compilation.md)** - Detailed build instructions  
 🔗 **[GFDL Instructions](https://github.com/NOAA-GFDL/MOM6/wiki/Getting-Started)** - Official MOM6 build docs
 
-### Step 3: Create Work Directory
+### Step 3: git clone MOM6_COBALT_NEUS25 repository
 
 Set up your simulation directory with the NEUS25 configuration:
 
@@ -97,8 +97,32 @@ cp -r exps/NEUS25.COBALT /your/work/dir/
 cd /your/work/dir/NEUS25.COBALT/
 
 # Link the compiled executable obtained in Step 2.
-ln -s /path/to/compiled/MOM6 .
+ln -s /path/to/compiled/MOM6COBALT .
 ```
+
+
+### Step 4: Gather input data
+
+Obtain all required input files and place them in the `INPUT/` directory:
+
+1. **Static files** (one-time download)
+   - Grid files (ocean_hgrid.nc, ocean_static.nc)
+   - Initial conditions (MOM6, COBALT)
+   - Auxiliary files (masks, tidal harmonics)
+   - bgc lateral boundary files
+   - Download from Zenodo: [DOI]
+
+2. **Forcing files** (time-varying, per simulation period)
+   - Atmosphere: ERA5 fields
+   - Ocean BC: GLORYS boundaries
+   - Rivers: GloFAS discharge + nutrients
+   - Generate using preprocessing tools or download pre-processed
+
+📖 **[Input Files Guide](docs/input_files.md)** - Complete list and descriptions  
+🔧 **[Preprocessing Tools](../tools/mom6_neus25_utils/README.md)** - Generate forcing from raw data
+
+### Step 5: Edit Configuration
+
 
 Directory structure after setup:
 ```
@@ -131,29 +155,8 @@ NEUS25.COBALT/
 *will not be present after the setting up the directory structure
 ```
 
-### Step 4: Gather input data
-
-Obtain all required input files and place them in the `INPUT/` directory:
-
-1. **Static files** (one-time download)
-   - Grid files (ocean_hgrid.nc, ocean_static.nc)
-   - Initial conditions (MOM6, COBALT)
-   - Auxiliary files (masks, tidal harmonics)
-   - bgc lateral boundary files
-   - Download from Zenodo: [DOI]
-
-2. **Forcing files** (time-varying, per simulation period)
-   - Atmosphere: ERA5 fields
-   - Ocean BC: GLORYS boundaries
-   - Rivers: GloFAS discharge + nutrients
-   - Generate using preprocessing tools or download pre-processed
-
-📖 **[Input Files Guide](docs/input_files.md)** - Complete list and descriptions  
-🔧 **[Preprocessing Tools](../tools/mom6_neus25_utils/README.md)** - Generate forcing from raw data
-
-### Step 5: Edit Configuration
-
 Configure the model for your simulation by editing these files:
+
 
 #### Essential Files (must edit):
 

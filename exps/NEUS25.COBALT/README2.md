@@ -4,6 +4,14 @@
 
 This guide walks through setting up and running the MOM6-COBALT regional ocean-biogeochemistry model for the Northeast US continental shelf.
 
+## Prerequisites
+
+- Linux/Unix environment with MPI
+- Fortran compiler (Intel or GNU)
+- NetCDF libraries
+- ~2TB storage for inputs, ~5TB for outputs
+
+
 ## Workflow Overview
 
 ### Setup Phase
@@ -42,13 +50,6 @@ flowchart LR
     style A fill:#afd,stroke:#333,stroke-width:2px
     style E fill:#9f9,stroke:#333,stroke-width:2px
 ```
-
-## Prerequisites
-
-- Linux/Unix environment with MPI
-- Fortran compiler (Intel or GNU)
-- NetCDF libraries
-- ~2TB storage for inputs, ~5TB for outputs
 
 ## Setup Process
 

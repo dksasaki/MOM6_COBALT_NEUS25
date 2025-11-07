@@ -13,9 +13,9 @@ This guide walks through setting up and running the MOM6-COBALT regional ocean-b
 
 ## Workflow Overview
 
-The general workflow is presented below. Each numbered step is documented b
+The general workflow is presented below.
 
-### Setup Phase
+### Setup and execution
 ```mermaid
 flowchart LR
     A[1. Clone Repository] --> B[2. Build Executable]
@@ -30,9 +30,6 @@ flowchart LR
     style H fill:#afd,stroke:#333,stroke-width:2px
 ```
 
-
-
-### Run Phase
 ```mermaid
 flowchart LR
     A[INPUT/] --> B[5. Edit Configuration <br/> <br/> Essential Files<br/>- input.nml<br/>- MOM_layout<br/>- MOM_input<br/>- MOM_override<br/>- diag_table<br/>- field_table<br/>- data_table]

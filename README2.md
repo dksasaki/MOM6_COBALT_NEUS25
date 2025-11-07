@@ -18,7 +18,7 @@ The general workflow is presented below.
 ### Setup and execution
 ```mermaid
 flowchart LR
-    A[1. git clone CEFI Repository] --> B[2. Build MOM6/dependencies]
+    A[1. git clone CEFI Repository] --> B[2. build MOM6/dependencies]
     B -.-> |compile| C{MOM6 executable}
     
     D[3. git clone/create work directory from MOM6_COBALT_NEUS25]
@@ -26,7 +26,7 @@ flowchart LR
     D --> E
     
     E --> H
-    %% F[4. Gather Input Data <br/> <br/>Static Files<br/>- Grid<br/>- Initial Conditions<br/>- Auxiliary Files <br/> <br/>Forcing Files<br/>- Atmosphere<br/>- Ocean BC<br/>- Rivers]
+
     F[4. Gather Input Data ]
     F --> H[INPUT/]
     

@@ -89,8 +89,8 @@ ln -s /path/to/compiled/MOM6COBALT .
 
 Place in the `/your/work/dir/NEUS25.COBALT/INPUT/:
 
-Static: Grid, IC, masks, tides, others → [Download from Zenodo]
-Forcing: ERA5, GLORYS, GloFAS, nudging files → Generate with tools
+- Static: Grid, IC, masks, tides, others → [Download from Zenodo]
+- Forcing: ERA5, GLORYS, GloFAS, nudging files → Generate with tools
 
 [Input Files Guide](docs/input_files.md)
 [Preprocessing Tools](../tools/mom6_neus25_utils/README.md)

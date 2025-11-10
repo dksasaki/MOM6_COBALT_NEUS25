@@ -91,6 +91,8 @@ LAYOUT = 16,10                       ! X,Y processor distribution
 IO_LAYOUT = 1,1                      ! I/O processor layout
 ```
 
+`mask_table.120.16x10` should be placed in `/INPUT`.
+
 **Must match**: Number of MPI tasks (16 × 10 = 160 in example, but mask may exclude some)
 
 In order to build mask_table files, use the check_mask tool from [FRE-NCtools](https://github.com/NOAA-GFDL/FRE-NCtools) (`FRE-NCtools/src/check-mask`).

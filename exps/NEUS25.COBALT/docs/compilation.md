@@ -14,7 +14,7 @@ This guide covers compiling the CEFI-regional-MOM6 system with MOM6, SIS2, and C
 
 ## Workflow overview
 
-```
+```mermaid
 flowchart TD
     A[Start] --> B[Clone CEFI-regional-MOM6]
     B --> C{Choose Build Method}

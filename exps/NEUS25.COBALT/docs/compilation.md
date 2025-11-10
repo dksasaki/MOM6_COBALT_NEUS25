@@ -73,7 +73,7 @@ cd /path/to/CEFI-regional-MOM6/builds
 
 **Note**: The `-m` flag selects the machine directory (e.g., `gaea/`), `-p` selects the compiler environment (e.g., `intel19.env` and `intel19.mk`), `-t` sets build type (prod/repro/debug), and `-f` specifies the target (mom6sis2). You'll need to set up both for your environment.
 
-#### Option B: For Northeastern Explorer
+#### Option B: For Northeastern Explorer (HPC)
 
 Explorer users should use the specific build configuration from the MOM6-COBALT-NEUS25 repository:
 ```bash

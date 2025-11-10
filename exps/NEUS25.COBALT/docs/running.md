@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide covers running MOM6-COBALT model after compilation and configuration setup. We provide two approaches: automated job chaining with `mom.sub.x` (SLURM-based) and direct execution. Noticed that SLURM-based is system-dependent.
+This guide covers running MOM6-COBALT model after compilation and configuration setup. We provide two approaches: automated job chaining with `mom.sub.x` (SLURM-based) and direct execution. Notice that SLURM-based is system-dependent.
 
 ## Prerequisites
 
@@ -41,7 +41,8 @@ The `mom.sub.x` script automates long simulations by breaking them into sequenti
 njobs=400                        ! Total number of jobs
 yearbeg=1993                     ! Starting year
 ```
-A file named `jobscompleted` will be created - it correspond of the number orf restarts that were performerd. It will contain a list of integers that are used to control the iteration order. Restarting the model requires this file to be configured properly, with the iteration corresponding to the correct restart number. Avoid changing the number of months per job - `mom.sub.x` was not designed to keep track of  this.
+**Important**: A file named `jobscompleted` tracks completed iterations. This file controls restart sequencing - each line represents a completed job number. When restarting after interruption, ensure this file reflects the correct number of completed jobs. Avoid changing the `months` parameter mid-simulation as `mom.sub.x` assumes consistent job durations.
+
 
 
 ### Running
@@ -85,16 +86,12 @@ thisyear=1993
 cat data_table.template | sed -e "s/<YEAR>/$thisyear/g" > data_table
 cat configs/MOM_override.template | sed -e "s/<YEAR>/$thisyear/g" > configs/MOM_override
 
-# make sure input_filename in input.nml is set as 'n' if you are starting from scratch
+# Ensure cold start in input.nml
+# Set: input_filename = 'n'
+
+# For restart (year 1994)
+# Set: input_filename = 'r' in input.nml
 
 mpirun -np 256 ./MOM6
 
-# Move outputs
-mkdir -p outputs_1993
-mv *.nc outputs_1993/
-
-
-# Continue run (restart)
-echo "Starting year 1994"
-mpirun -np 256 ./MOM6
 ```

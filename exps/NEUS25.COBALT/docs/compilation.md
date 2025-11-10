@@ -16,7 +16,7 @@ This guide covers compiling the CEFI-regional-MOM6 system with MOM6, SIS2, and C
 
 ```mermaid
 flowchart TD
-    A[Start] --> B[Clone CEFI-regional-MOM6]
+    A[Start] --> B["Clone CEFI-regional-MOM6"]
     B --> C{Choose Build Method}
     
     C -->|Option A: Standard| D[Select Machine Config]
@@ -28,7 +28,7 @@ flowchart TD
     
     F --> H[Build Process]
     H --> I[Compile FMS Library]
-    I --> J[Compile MOM6-SIS2-COBALT]
+    I --> J["Compile MOM6-SIS2-COBALT"]
     J --> K[Executable Created]
     
     K --> L["builds/{machine}-{compiler}/<br/>ocean_ice/{build_type}/MOM6SIS2"]

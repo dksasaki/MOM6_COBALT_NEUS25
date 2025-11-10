@@ -6,7 +6,7 @@ MOM6 uses several configuration files to control model parameters, input/output,
 
 ## Workflow overview
 
-```Mermaid
+```mermaid
 flowchart LR
     A[input.nml] -->|controls| B[FMS Framework]
     A -->|specifies| C[MOM_input]

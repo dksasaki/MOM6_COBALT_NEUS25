@@ -92,6 +92,8 @@ IO_LAYOUT = 1,1                      ! I/O processor layout
 
 **Must match**: Number of MPI tasks (16 × 10 = 160 in example, but mask may exclude some)
 
+In order to build mask_table files, use the check_mask tool from [FRE-NCtools](https://github.com/NOAA-GFDL/FRE-NCtools) (`FRE-NCtools/src/check-mask`).
+
 ### 5. **data_table**
 **Purpose**: Maps external forcing files to model variables  
 **Format**: Space-delimited fields per line

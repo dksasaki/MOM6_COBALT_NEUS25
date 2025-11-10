@@ -2,7 +2,7 @@
 
 ## Overview
 
-MOM6 uses several configuration files to control model parameters, input/output, and runtime behavior. Each file has a specific purpose and syntax. This is a general overview which is not comprehensive.
+MOM6 uses several configuration files to control model parameters, input/output, and runtime behavior. Each file has a specific purpose and syntax. This is a general and non-comprehensive overview. All files below are specific to the github hash comit of CEFI and may not be compatible with more up-to-date versions of CEFI and MOM6.
 
 ## Workflow overview
 
@@ -81,8 +81,9 @@ KHTH = 10.0                 ! Add new parameter not in MOM_input
 **Best practice**: Use for experiment-specific changes, keeping MOM_input as baseline
 
 ### 4. **MOM_layout**
-**Purpose**: Domain decomposition for parallel execution  
+**Purpose**: Domain decomposition for parallel execution (it excludes land-points from being included in parallel applications)  
 **Format**: Simple key-value pairs
+
 
 ```
 MASKTABLE = "mask_table.120.16x10"  ! Processor mask file
@@ -93,6 +94,9 @@ IO_LAYOUT = 1,1                      ! I/O processor layout
 **Must match**: Number of MPI tasks (16 × 10 = 160 in example, but mask may exclude some)
 
 In order to build mask_table files, use the check_mask tool from [FRE-NCtools](https://github.com/NOAA-GFDL/FRE-NCtools) (`FRE-NCtools/src/check-mask`).
+
+**Note**: avoid using mask_table at early stages of your model configuration.
+
 
 ### 5. **data_table**
 **Purpose**: Maps external forcing files to model variables  

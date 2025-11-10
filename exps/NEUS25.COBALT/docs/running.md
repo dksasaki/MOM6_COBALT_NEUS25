@@ -39,8 +39,8 @@ The `mom.sub.x` script automates long simulations by breaking them into sequenti
 3. **Configure job sequencing** in `mom.sub.x`:
 ```bash
 njobs=400                        ! Total number of jobs
-yearbeg=1993                     ! Starting year
 ```
+
 **Important**: A file named `jobscompleted` tracks completed iterations. This file controls restart sequencing - each line represents a completed job number. When restarting after interruption, ensure this file reflects the correct number of completed jobs. Avoid changing the `months` parameter mid-simulation as `mom.sub.x` assumes consistent job durations.
 
 

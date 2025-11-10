@@ -135,8 +135,7 @@ Example:
 
 # === FILE DEFINITIONS ===
 "file_name",  output_freq,  "output_freq_units",  file_format,  "time_axis_units",  "time_axis_name"
-"ocean_daily", 1, "days", 1, "days", "time"
-"ocean_month", 1, "months", 1, "days", "time"
+
 
 # === FIELD DEFINITIONS ===
 "module_name",  "field_name",  "output_name",  "file_name",  "time_sampling",  "reduction_method",  "regional_section",  packing

@@ -78,9 +78,11 @@ git submodule update --recursive
 
 ### Step 2: build MOM6/dependencies
 
-Compile MOM6 for your system. This step is system-specific and produces the `MOM6` executable. The executable can be built once and be used for different experiments.
+Compile MOM6 for your system. This step is system-specific and produces the `MOM6` executable. Examples of dependency installation are provided in `/compile` directory. 
 
-- [Compilation Guide](docs/compilation.md) 
+The executable can be built once and be used for different experiments.
+
+- [Compilation Guide (after dependencies are installed and working)](exps/NEUS25.COBALT/docs/compilation.md) 
 - [GFDL Instructions](https://github.com/NOAA-GFDL/MOM6-examples/wiki)
 
 ### Step 3: git clone MOM6_COBALT_NEUS25 repository
@@ -102,7 +104,7 @@ Place in the `/your/work/dir/NEUS25.COBALT/INPUT/:
 - Static: Grid, IC, masks, tides, others → [Download from Zenodo]
 - Forcing: ERA5, GLORYS, GloFAS, nudging files → Generate with tools
 
-- [Input Files Guide](docs/input_files.md)
+- [Input Files Guide](exps/NEUS25.COBALT/docs/input_files.md)
 - [Preprocessing Tools](https://github.com/dksasaki/mom6_neus25_utils)
 
 ### Step 5: Edit Configuration
@@ -120,7 +122,7 @@ In `NEUS25.COBALT` dir.:
 - `diag_table` - Configure output variables
 
 
-[Configuration Guide](docs/configuration.md)
+[Configuration Guide](exps/NEUS25.COBALT/docs/configuration.md)
 
 ### Step 6: Execute Model
 
@@ -141,7 +143,7 @@ The model will produce:
 - Restart files in `RESTART/` directory
 - Log files for debugging
 
-[Running Guide](docs/running.md)
+[Running Guide](exps/NEUS25.COBALT/docs/running.md)
 
 ## Quick Checklist
 

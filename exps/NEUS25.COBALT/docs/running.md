@@ -70,7 +70,11 @@ For short tests, debugging, or systems without SLURM.
 
 ### Single Run
 
-Set your environment (system-specific) - it should use the same .env file used to compile your mom6 executable.
+Set your environment (system-specific) - it should use the same .env file used to compile your mom6 executable. If `conda` environment is active, exit it, as it may link the wrong `$PATH` to fortran compilers.
+
+```
+source intel.env
+```
 
 ### Manual Job Management
 
@@ -92,6 +96,6 @@ cat configs/MOM_override.template | sed -e "s/<YEAR>/$thisyear/g" > configs/MOM_
 # For restart (year 1994)
 # Set: input_filename = 'r' in input.nml
 
-mpirun -np 256 ./MOM6
+mpiexec -np 256 ./MOM6
 
 ```

@@ -2,7 +2,7 @@
 
 ## Overview
 
-MOM6 uses several configuration files to control model parameters, input/output, and runtime behavior. Each file has a specific purpose and syntax.
+MOM6 uses several configuration files to control model parameters, input/output, and runtime behavior. Each file has a specific purpose and syntax. This is a general overview which is not comprehensive.
 
 ## Workflow overview
 

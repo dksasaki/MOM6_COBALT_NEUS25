@@ -103,7 +103,7 @@ In order to build mask_table files, use the check_mask tool from [FRE-NCtools](h
 **Format**: Space-delimited fields per line
 
 ```
-"COMPONENT" "model_var" "file_var" "file_path" "interp_method" "factor"
+"gridname" "fieldname_code" "fieldname_file" "file_name" "interp_method" "factor"
 ```
 
 Example:
@@ -117,31 +117,15 @@ Example:
 **Interpolation**: bilinear, bicubic, conservative, or none  
 **Factor**: Multiplier for unit conversion
 
+**Documentation**: [Read the docs!](https://mom6.readthedocs.io/en/main/forcing.html)
+
+
 ### 6. **field_table**
-**Purpose**: Define tracers and their initialization  
-**Format**: Tracer specifications with advection schemes
+**Purpose**: Define tracers, their initialization and model coefficients
 
-```
-"tracer_packages","ocean_mod","ocean_cobalt_tracers"
-
-"prog_tracers","ocean_mod","temp"
-horizontal-advection-scheme = mdppm
-vertical-advection-scheme = mdppm
-restart_file = ocean_cobalt_tracers.res.nc
-
-"prog_tracers","ocean_mod","salt"
-horizontal-advection-scheme = mdppm
-vertical-advection-scheme = mdppm
-restart_file = ocean_cobalt_tracers.res.nc
-```
-
-**Also controls**:
-- BGC tracer definitions (for COBALT)
-- Initial condition files
-- Boundary condition files
-- Parameter values for biogeochemistry
 
 ### 7. **diag_table**
+
 **Purpose**: Control diagnostic output (what, when, how)  
 **Format**: Three sections - Header, Files, Fields
 
@@ -150,18 +134,17 @@ restart_file = ocean_cobalt_tracers.res.nc
 1993 1 1 0 0 0              ! Base date for time axis
 
 # === FILE DEFINITIONS ===
-"file_name", output_freq, "freq_units", format, "time_units", "time_axis"
+"file_name",  output_freq,  "output_freq_units",  file_format,  "time_axis_units",  "time_axis_name"
 "ocean_daily", 1, "days", 1, "days", "time"
 "ocean_month", 1, "months", 1, "days", "time"
 
 # === FIELD DEFINITIONS ===
-"module", "field", "output_name", "file_name", "time_method", "pack"
-"ocean_model", "temp", "temp", "ocean_daily", "mean", "none"
-"ocean_model", "salt", "salt", "ocean_daily", "mean", "none"
+"module_name",  "field_name",  "output_name",  "file_name",  "time_sampling",  "reduction_method",  "regional_section",  packing
+
 ```
 
-**Time methods**: mean, snapshot, min, max, rms  
-**Packing**: none, 1, 2, 4, 8 (bytes per value)
+**documentation** [Read the docs!](https://mom6.readthedocs.io/en/main/api/generated/pages/Diagnostics.html)
+
 
 ## File Hierarchy and Precedence
 

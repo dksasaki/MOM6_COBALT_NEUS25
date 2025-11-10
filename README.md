@@ -78,7 +78,7 @@ git submodule update --recursive
 
 ### Step 2: build MOM6/dependencies
 
-Compile MOM6 for your system. This step is system-specific and produces the `MOM6` executable. Examples of dependency installation are provided in `/compile` directory. 
+Compilation of dependencies and MOM6 are system-specific, this is usually a complicated step we can't provide instructions. Examples of dependency installation are provided in `/compile` directory. 
 
 The executable can be built once and be used for different experiments.
 
@@ -126,7 +126,7 @@ In `NEUS25.COBALT` dir.:
 
 ### Step 6: Execute Model
 
-Run the model using one of these approaches:
+Run the model using one of these approaches - look at the [Running Guide](exps/NEUS25.COBALT/docs/running.md) for more information:
 
 **Test run** (interactive):
 ```bash
@@ -143,14 +143,4 @@ The model will produce:
 - Restart files in `RESTART/` directory
 - Log files for debugging
 
-[Running Guide](exps/NEUS25.COBALT/docs/running.md)
 
-## Quick Checklist
-
-Before executing, verify:
-
-- [ ] MOM6 executable is compiled and linked
-- [ ] All files listed in `data_table` exist in `INPUT/`
-- [ ] `configs/MOM_layout` matches your processor count
-- [ ] `input.nml` has correct start date and duration
-- [ ] Sufficient disk space for outputs (~5GB per simulated year)

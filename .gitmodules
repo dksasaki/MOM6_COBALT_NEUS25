@@ -2,6 +2,6 @@
 	path = tools/mom6_neus25_utils
 	url = git@github.com:dksasaki/mom6_neus25_utils.git
 [submodule "exps/NEUS25_COBALT_CBED"]
-	path = exps/MOM6-COBALT-NEUS25v1
+	path = exps/NEUS25_COBALT_CBED
 	url = https://github.com/dksasaki/NEUS25_COBALT_CBED.git
 	branch = version_MOM6-COBALT-NEUS25v1

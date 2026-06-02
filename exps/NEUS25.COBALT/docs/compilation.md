@@ -10,7 +10,7 @@ This guide covers compiling the CEFI-regional-MOM6 system with MOM6, SIS2, and C
 - MPI implementation
 - NetCDF (C and Fortran)
 - Git with submodules
-- For Explorer: See `install_libraries.sh` for dependency installation
+- For Explorer: See `install_libraries.sh` for dependency installation (this is only required if libraries are not set)
 
 ## Workflow overview
 
@@ -74,6 +74,8 @@ cd /path/to/CEFI-regional-MOM6/builds
 **Note**: The `-m` flag selects the machine directory (e.g., `gaea/`), `-p` selects the compiler environment (e.g., `intel19.env` and `intel19.mk`), `-t` sets build type (prod/repro/debug), and `-f` specifies the target (mom6sis2). You'll need to set up both for your environment.
 
 #### Option B: For Northeastern Explorer (HPC)
+
+We are assuming the libraries dependencies are available.
 
 Explorer users should use the specific build configuration from your MOM6-COBALT-NEUS25 repository:
 ```bash

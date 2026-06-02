@@ -75,13 +75,17 @@ cd /path/to/CEFI-regional-MOM6/builds
 
 #### Option B: For Northeastern Explorer (HPC)
 
-Explorer users should use the specific build configuration from the MOM6-COBALT-NEUS25 repository:
+Explorer users should use the specific build configuration from your MOM6-COBALT-NEUS25 repository:
 ```bash
+# work interactively into a node (cascadelake is intel architecture)
+srun --partition=short --constraint=cascadelake --mem=16G --ntasks=8 --pty /bin/bash
+
+
 # Navigate to the Explorer-specific build directory
-cp -r /path/to/MOM6-COBALT-NEUS25/exps/NEUS25.COBALT/builds /path/to/CEFI-regional-MOM6/builds/explorer_intel
+cp -r /path/to/MOM6-COBALT-NEUS25/exps/NEUS25.COBALT/builds/explorer /path/to/CEFI-regional-MOM6/builds/explorer
 
 cd /path/to/CEFI-regional-MOM6/builds
-./linux-build.bash -m explorer_intel -p intel -t prod -f mom6sis2
+./linux-build.bash -m explorer -p intel
 
 ```
 

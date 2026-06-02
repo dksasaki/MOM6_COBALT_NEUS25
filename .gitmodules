@@ -1,6 +1,6 @@
 [submodule "tools/mom6_neus25_utils"]
 	path = tools/mom6_neus25_utils
-	url = git@github.com:dksasaki/mom6_neus25_utils.git
+	url = https://github.com/dksasaki//mom6_neus25_utils.git
 [submodule "exps/NEUS25_COBALT_CBED"]
 	path = exps/NEUS25_COBALT_CBED
 	url = https://github.com/dksasaki/NEUS25_COBALT_CBED.git
